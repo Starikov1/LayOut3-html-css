@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		oneBlock = false;
+		twoBlock = false;
+		threeBlock = false;
+		fourBlock = false;
+		fiveBlock = false;
+
+		function OneOver()
+		{
+			if(oneBlock==false)
+			{
+				document.getElementById('list_one').style.display='block';
+				oneBlock = true;
+			}
+			else
+			{
+				document.getElementById('list_one').style.display='none';
+				oneBlock = false;
+			}
+		}
+
+		function TwoOver()
+		{
+			if(twoBlock==false)
+			{
+				document.getElementById('list_two').style.display='block';
+				twoBlock = true;
+			}
+			else
+			{
+				document.getElementById('list_two').style.display='none';
+				twoBlock = false;
+			}
+		}
+
+		function ThreeOver()
+		{
+			if(threeBlock==false)
+			{
+				document.getElementById('list_three').style.display='block';
+				threeBlock = true;
+			}
+			else
+			{
+				document.getElementById('list_three').style.display='none';
+				threeBlock = false;
+			}
+		}
+
+		function FourOver()
+		{
+			if(fourBlock==false)
+			{
+				document.getElementById('list_four').style.display='block';
+				fourBlock = true;
+			}
+			else
+			{
+				document.getElementById('list_four').style.display='none';
+				fourBlock = false;
+			}
+		}
+
+		function FiveOver()
+		{
+			if(fiveBlock==false)
+			{
+				document.getElementById('list_five').style.display='block';
+				fiveBlock = true;
+			}
+			else
+			{
+				document.getElementById('list_five').style.display='none';
+				fiveBlock = false;
+			}
+		}
+
+		function BlockNone()
+		{
+			var added_item_button = document.getElementById('the_form');
+			var actualDisplay = getComputedStyle(added_item_button).display;
+			if (actualDisplay == 'none') 
+			{
+				added_item_button.style.display = 'block';
+		  	} 
+			else 
+		  	{
+				/*added_item_button.innerText += '.';*/
+		    	added_item_button.style.display = 'none';
+			}
+		}
+
+		function Show()
+		{
+			document.getElementById('the_form').style.display='none';
+		}
+
+		function fade_1()
+		{
+			document.getElementById('placeholder').style.display='none';
+		}
+
+		function dataRecieving()
+		{
+			var name = document.getElementById('name').value;
+			var phone = document.getElementById('phone').value;
+			var email = document.getElementById('email').value;
+			var message = document.getElementById('message').value;
+			alert('Данные получены.');
+		}
+	</script>
+
+	<!-- Подключаем CSS слайдера -->
+<link rel="stylesheet" href="simple-adaptive-slider.min.css">
+<!-- Подключаем JS слайдера -->
+<!-- <script defer src="simple-adaptive-slider.js"></script> -->
+<script defer src="sl.js"></script>
+
+</head>
+<body>
+	<header id="correct_width_header_footer">
+		<section id="internal_width" class="header_sect">
+			<div>
+				<a>
+					<img src="logo.png" alt="logo" title="логотип компании" id="Left_header" style="float: left; width: 160px">
+				</a>
+			</div>
+			<section class="phones">
+				<br>+7(499)777-77-77</br>
+				<br>+7(499)777-77-77</br>
+				<a onclick="BlockNone()">Обратная связь</a>
+			</section>
+		</section>
+	</header>
+	<main>
+		<div id="the_form">
+			<div style="width: 100%; height: 20px; text-align: right; cursor: pointer;" onclick="Show()">
+				<img src="x.png" style="width: 20px; height: 20px; right: 0;">
+			</div>
+			<center>
+				<h1>Обратная связь</h1>
+			</center>
+			<center>
+				<form action="index.html" name="fl">
+					<div  id="pyramide">
+						<br>Ваше имя *</br>
+						<input type="text" id="name" placeholder="Ваше имя" name="name" class="input">
+						<br>Телефон *</br>
+						<input type="text" id="phone" placeholder="Телефон" name="phone" class="input">
+						<br>Email *</br>
+						<input type="text" id="email" name="email" class="input" onclick="fade_1()">
+						<div id="placeholder">Скажи пароль, друг</div>
+						<br>Сообщение *</br>
+						<textarea rows="5" id="message" placeholder="Сообщение" name="message" class="input" style="width: 80%; margin-bottom: 5%"></textarea>
+					</div>
+					<input type="submit" value="Отправить" name="sub" class="input" style="margin-top: 10%; background-color: grey; color: white; font-weight: bold; font-size: 18px; width: 50%; padding-top: 2%; padding-bottom: 2%" 
+					onclick="dataRecieving()">
+				</form>
+			</center>
+		</div>
+
+		<section>
+		<section class="menu_width">
+			<div class="menu">
+				<a>Главная</a>	|
+				<a>Каталог</a>  |
+				<a>Доставка и оплата</a>  |
+				<a>Прайс-лист</a>  |
+				<a>Контакты</a>
+			</div>
+		</section>
+
+
+			
+			<section class="slider2" style="position: relative;">
+				<div class="slider3">
+					<div class="slider-line">
+						<img src="./for_slider/1.jpg">
+						<img src="./for_slider/2.png">
+						<img src="./for_slider/3.jpg">
+						<img src="./for_slider/4.jpg">
+					</div>
+				</div>
+			</section>
+			<center>
+				<div style="width: 200px">
+				<button style="width: 100px; float: left;" class="prev">Prev</button>
+				<button style="width: 100px;" class="next">Next</button>
+			</div>
+			</center>
+
+
+		</section>
+
+		<section width="100%" class="lower_menu">
+			<a style="text-decoration: underline;">Главная</a>  /
+			<a style="text-decoration: underline;">Каталог</a>  /
+			<a style="text-decoration: none;">Бытовые товары</a>
+		</section>
+
+		<section style="width: 1000px; display: flex; margin: auto;">
+			<section class="content_left">
+				Автомобили<br>
+				<!-- <div> -->
+					<br><a onmouseover="OneOver()" id="one">Бытовая техника</a>
+				<div id="list_one" id="common_one_to_five">
+					<ul>
+						<li><a>Микроволновки</a></li>
+						<li><a>Холодильники</a></li>
+						<li><a>Стиральные машины</a></li>
+						<li><a>Чайники</a></li>
+						</ul>
+				</div>
+				<!-- </div> -->
+				<br><a onmouseover="TwoOver()" id="two">Мобильная техника</a>
+				<div id="list_two" class="common_one_to_five">
+					<ul>
+						<li><a>Huawei</a></li>
+						<li><a>Lenovo</a></li>
+						<li><a>Redmi</a></li>
+						<li><a>Nokia</a></li>
+					</ul>
+				</div>
+				<br><a id="three" onmouseover="ThreeOver()">Компьютеры</a>
+				<div id="list_three" class="common_one_to_five">
+					<ul>
+						<li><a>MSI</a></li>							
+						<li><a>Lenovo</a></li>
+						<li><a>Asus</a></li>
+						<li><a>Del</a></li>
+					</ul>
+				</div>
+				<br><a onmouseover="FourOver()" id="four">Одежда</a>
+					<div id="list_four" class="common_one_to_five">
+						<ul>
+							<li><a>Джинсовые</a></li>
+							<li><a>Эко-кожа</a></li>
+							<li><a>Хлопок</a></li>
+							<li><a>Лён</a></li>
+						</ul>
+					</div>
+					<br><a onmouseover="FiveOver()" id="five">Недвижимость</a>
+					<div id="list_five" class="common_one_to_five">
+						<ul>
+							<li><a>Жилые</a></li>
+							<li><a>Коммерческие</a></li>
+							<li><a>Производственные</a></li>
+							<li><a>Сельськохозяйственные</a></li>
+						</ul>
+					</div>
+			</section>
+			<section class="content_right">
+				<div class="two_rows" style="margin-bottom: 10px;">
+					<section class="comodity_block">
+						<section class="image_comodity">
+							<img src="comodities/1.jpeg">
+						</section>
+						<div id="description_block">
+							<div>
+								<a>
+									<br><b>Самый клёвый чайник.
+									<br>Его нужно купить.</b>
+								</a>
+							</div>
+						</div>
+						<section>
+							<div class="price_com"><b>Цена: 1900Р</b></div>
+							<a>
+								<div id="basket_button">
+									<img src="basket.png">
+								</div>
+							</a>
+						</section>
+					</section>
+					<section class="comodity_block">
+						<section class="image_comodity" >
+							<img src="comodities/2.jpeg">
+						</section>
+						<div id="description_block">
+							<div>
+								<a>
+									<br><b>Самый клёвый чайник.
+									<br>Его нужно купить.</b>
+								</a>
+							</div>
+						</div>
+						<section>
+							<div class="price_com"><b>Цена: 1900Р</b></div>
+							<a>
+								<div id="basket_button">
+									<img src="basket.png">
+								</div>
+							</a>
+						</section>
+					</section>
+					<section class="comodity_block">
+						<section class="image_comodity">
+							<img src="comodities/3.jpeg">
+						</section>
+						<div id="description_block">
+							<div>
+								<a>
+									<br><b>Самый клёвый чайник.
+									<br>Его нужно купить.</b>
+								</a>
+							</div>
+						</div>
+						<section>
+							<div class="price_com"><b>Цена: 1910Р</b></div>
+							<a>
+								<div id="basket_button">
+									<img src="basket.png">
+								</div>
+							</a>
+						</section>
+					</section>
+				</div>
+				<div class="two_rows">
+					<section class="comodity_block">
+						<section class="image_comodity" >
+							<img src="comodities/4.jpeg">
+						</section>
+						<div id="description_block">
+							<div>
+								<a>
+									<br><b>Самый клёвый чайник.
+									<br>Его нужно купить.</b>
+								</a>
+							</div>
+						</div>
+						<section>
+							<div class="price_com"><b>Цена: 1900Р</b></div>
+							<a>
+								<div id="basket_button">
+									<img src="basket.png">
+								</div>
+							</a>
+						</section>
+					</section>
+					<section class="comodity_block">
+						<section class="image_comodity" >
+							<img src="comodities/5.jpg">
+						</section>
+						<div id="description_block">
+							<div>
+								<a>
+									<br><b>Самый клёвый чайник.
+									<br>Его нужно купить.</b>
+								</a>
+							</div>
+						</div>
+						<section>
+							<div class="price_com"><b>Цена: 1900Р</b></div>
+							<a>
+								<div id="basket_button">
+									<img src="basket.png">
+								</div>
+							</a>
+						</section>
+					</section>
+				</div>
+
+				<section id="some_text">
+					<div id="absaz" style="margin-right: 10%;">
+						<p>Найстарішим з них є перший варіант. До початку вестернізації Японії у середині 19 століття ним позначали будь-який одяг. Ще у 16 столітті португальські місіонери-єзуїти повідомляли у звітах до Європи, що японці називають одяг словом «кімоно» (Kimono). Ця назва перекочувала у більшість іноземних мов, і в українську зокрема. Хоча у домодерній Японії «кімоно» було аналогом універсального поняття «одяг», у Європі та Америці воно стало асоціюватися саме з японським вбранням.</p>
+					</div>
+					<div id="absaz">
+						<p>Наприкінці 19 століття у Японії збільшилась кількість тих, хто заходився носити західний стрій. Відмінність західного і японського костюму змушувала японців виокремити останній з загального поняття «кімоно». Виник неологізм для позначення традиційного одягу — «вафуку»[3] . До кінця Другої світової війни це слово стало основним для означення японського вбрання. Однак у післявоєнні часи, під впливом американського «розуміння» японської дійсності, універсальний термін «кімоно» почали застосовувати як один з синонімів «вафуку».</p>
+
+						<p>Відповідно, у сучасній японській мові «кімоно» отримало два значення. У широкому розумінні — це загальний термін для окреслення будь-якого одягу, а вузькому — різновид вафуку.</p>
+					</div>
+				</section>
+
+			</section>
+		</section>
+
+		
+		
+	</main>
+	<footer id="correct_width_header_footer">
+		<section id="internal_width" class="footer_sect">
+			<div id="left_footer" class="LeftCompany">
+				<ul>
+					<li>2012-2013 ЗАО "Комания"</li>
+					<li>info@name.ru</li>
+				</ul>
+			</div>
+			<div id="left_footer" class="Underline">
+				<ul>
+					<li>Главная</li>
+					<li>Каталог</li>
+					<li>Доставка и оплата</li>
+					<li>Прайс-лист</li>
+					<li>Контакты</li>
+				</ul>
+			</div>
+			<div id="left_footer" class="Last">
+				<u>Разработка сайта</u> - 
+				<br> компания "Пиксель-Плюс"
+			</div>
+		</section>
+	</footer>
+</body>
+</html>
